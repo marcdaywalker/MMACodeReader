@@ -62,7 +62,7 @@ public class MMACodeReader: UIView {
             let captureMetadataOutput = AVCaptureMetadataOutput()
             avCaptureSession.addOutput(captureMetadataOutput)
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
-            captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
+            captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeQRCode, AVMetadataObjectTypeAztecCode]
             
             avCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: avCaptureSession)
             avCaptureVideoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
