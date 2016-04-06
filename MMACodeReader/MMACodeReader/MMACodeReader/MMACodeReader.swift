@@ -23,6 +23,21 @@ public class MMACodeReader: UIView {
         return delegate as? MMACodeReaderDelegate
     }
     
+    public init() {
+        super.init(frame: CGRectZero)
+        setupUI()
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupUI()
+    }
+    
     public override func awakeFromNib() {
         setupUI()
     }
