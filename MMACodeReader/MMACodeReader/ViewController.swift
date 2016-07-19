@@ -14,6 +14,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let reader = MMACodeReader(frame: CGRect(origin: CGPointZero, size: CGSize(width: 100, height: 100)))
+        reader.delegate = self
+        view.addSubview(reader)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,8 +32,8 @@ extension ViewController: MMACodeReaderDelegate {
         print("URL detected: \(value)")
     }
     
-    func readerDidFailRead(reader: MMACodeReader, error: ErrorType) {
-        print("Reading code failed: \(error)")
+    func readerDidFailRead(reader: MMACodeReader) {
+        print("Reading code failed")
     }
     
     func readerDidRejectAccess(reader: MMACodeReader) {
